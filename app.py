@@ -1,5 +1,6 @@
 import os, shutil, customtkinter
-
+from tkinter import Menu
+from time import sleep
 
 
 class Sort_files:
@@ -635,25 +636,132 @@ class Sort_files:
         except:
             print("operation wasn`t ok")
 
-
-
 class Window(customtkinter.CTk):
 
-    def help_(self):
-        text.configure(state="normal")
-        data = """
-Program specifications:
+    def setting(self):
+        setting = customtkinter.CTk()
 
-Program name: Sort _Files++
-Program function: Sort files in a folder
-Author: mohammad Moein Hosseinzadeh
-Author_email = moein191013895@gmail.com
-Programming language : Python
-Year of manufacture : 2024
-Number of program lines: 973
-Duration of creation: 3 months
+        setting.geometry(f"{setting.winfo_screenwidth()}x{setting.winfo_screenheight()}+0+0")
+        setting.title("Settings")
 
-Warning : The program can be run on a 64-bit system.
+        def ForegroundColorButton(ch):
+            btn_sort_access.configure(hover_color=ch)
+            btn_sort_apk.configure(hover_color=ch)
+            btn_sort_all.configure(hover_color=ch)
+            btn_sort_csv.configure(hover_color=ch)
+            btn_sort_exe.configure(hover_color=ch)
+            btn_sort_html.configure(hover_color=ch)
+            btn_sort_json.configure(hover_color=ch)
+            btn_sort_music.configure(hover_color=ch)
+            btn_sort_pdf.configure(hover_color=ch)
+            btn_sort_photo.configure(hover_color=ch)
+            btn_sort_pickle.configure(hover_color=ch)
+            btn_sort_powerpoint.configure(hover_color=ch)
+            btn_sort_python.configure(hover_color=ch)
+            btn_sort_rar.configure(hover_color=ch)
+            btn_sort_txt.configure(hover_color=ch)
+            btn_sort_video.configure(hover_color=ch)
+            btn_sort_word.configure(hover_color=ch)
+            btn_sort_excel.configure(hover_color=ch)
+            btn_sort_zip.configure(hover_color=ch)
+
+        def BackgroundColorButton(ch):
+            btn_sort_access.configure(fg_color=ch)
+            btn_sort_apk.configure(fg_color=ch)
+            btn_sort_all.configure(fg_color=ch)
+            btn_sort_csv.configure(fg_color=ch)
+            btn_sort_exe.configure(fg_color=ch)
+            btn_sort_html.configure(fg_color=ch)
+            btn_sort_json.configure(fg_color=ch)
+            btn_sort_music.configure(fg_color=ch)
+            btn_sort_pdf.configure(fg_color=ch)
+            btn_sort_photo.configure(fg_color=ch)
+            btn_sort_pickle.configure(fg_color=ch)
+            btn_sort_powerpoint.configure(fg_color=ch)
+            btn_sort_python.configure(fg_color=ch)
+            btn_sort_rar.configure(fg_color=ch)
+            btn_sort_txt.configure(fg_color=ch)
+            btn_sort_video.configure(fg_color=ch)
+            btn_sort_word.configure(fg_color=ch)
+            btn_sort_excel.configure(fg_color=ch)
+            btn_sort_zip.configure(fg_color=ch)
+        
+        def get_home():
+            setting.destroy()
+
+        def TextColorButtons(ch):
+            btn_sort_access.configure(text_color=ch)
+            btn_sort_apk.configure(text_color=ch)
+            btn_sort_all.configure(text_color=ch)
+            btn_sort_csv.configure(text_color=ch)
+            btn_sort_exe.configure(text_color=ch)
+            btn_sort_html.configure(text_color=ch)
+            btn_sort_json.configure(text_color=ch)
+            btn_sort_music.configure(text_color=ch)
+            btn_sort_pdf.configure(text_color=ch)
+            btn_sort_photo.configure(text_color=ch)
+            btn_sort_pickle.configure(text_color=ch)
+            btn_sort_powerpoint.configure(text_color=ch)
+            btn_sort_python.configure(text_color=ch)
+            btn_sort_rar.configure(text_color=ch)
+            btn_sort_txt.configure(text_color=ch)
+            btn_sort_video.configure(text_color=ch)
+            btn_sort_word.configure(text_color=ch)
+            btn_sort_excel.configure(text_color=ch)
+            btn_sort_zip.configure(text_color=ch)
+
+        MenuBar = Menu(setting)
+        setting.config(menu=MenuBar)
+
+        HomeMenu = Menu(setting,tearoff=0,font=5,activebackground="black",activeforeground="red",fg="Blue",bg="white")
+        HomeMenu.add_command(label="Home",command=get_home)
+        MenuBar.add_cascade(label="Home",menu=HomeMenu)
+
+        lbl = customtkinter.CTkLabel(setting,text="BackGroundColorsButtons")
+        lbl.pack(pady=10)
+
+        color = ["black","white"]
+
+        colors = ["red","green","blue","silver","purple","yellow","black","white"]
+
+        colors2 = ["blue","green","red","silver","purple","yellow","black","white"]
+
+
+        combo = customtkinter.CTkComboBox(setting,values=colors,command=BackgroundColorButton)
+        combo.pack(pady=10)
+
+        lbl2 = customtkinter.CTkLabel(setting,text="ForeGroundColorsButtons")
+        lbl2.pack(pady=10)
+
+        combo2 = customtkinter.CTkComboBox(setting,values=colors2,command=ForegroundColorButton)
+        combo2.pack(pady=10)
+
+        lbl3 = customtkinter.CTkLabel(setting,text="TextColorButtons")
+        lbl3.pack(pady=10)
+
+        combo3 = customtkinter.CTkComboBox(setting,values=color,command=TextColorButtons)
+        combo3.pack(pady=10)
+
+        setting.mainloop()
+    def help(self):
+        help = customtkinter.CTk()
+
+        help.geometry(f"{help.winfo_screenwidth()}x{help.winfo_screenheight()}+0+0")
+        help.title("Help")
+
+        def dest():
+            help.destroy()
+
+        def help_del():
+            Description.configure(state="normal")
+            Description.delete(0.0,'end')
+            Description.configure(state="disabled")
+
+        def help_():
+            Description.configure(state="normal")
+            Description.insert(0.0,text=
+
+                """
 
 Description:
 
@@ -696,19 +804,6 @@ Trans_late to persian language
 ترجمه به زبان فارسی
 
 
-مشخصات برنامه:
-
-نام برنامه: Sort _Files++
-عملکرد برنامه: مرتب سازی فایل ها در یک پوشه
-نویسنده: محمد معین حسین زاده
-نویسنده_ایمیل : moein191013895@gmail.com
-زبان برنامه نویسی: پایتون
-سال ساخت: 2024
-تعداد خطوط برنامه: 973
-مدت زمان ایجاد: 3 ماه
-
-هشدار: برنامه را می توان بر روی یک سیستم 64 بیتی اجرا کرد.
-
 توضیحات:
 
 برای استفاده از این برنامه ابتدا باید یک آدرس در قسمت مربوطه وارد کنید
@@ -750,20 +845,114 @@ Trans_late to persian language
 
 
             
-        """
-        text.insert(0.0,data)
-        text.configure(state="disabled")
+        
 
-    def help_delete(self):
-        text.configure(state="normal")
-        text.delete(0.0,'end')
-        text.configure(state="disabled")
+        """
+            )
+            Description.configure(state="disabled")
+
+        MenuBar = Menu(help)
+        help.config(menu=MenuBar)
+
+        HomeMenu = Menu(MenuBar,tearoff=0,font=5,activebackground="black",activeforeground="red",fg="Blue",bg="white")
+        HomeMenu.add_command(label="Home",command=dest)
+        MenuBar.add_cascade(label="Home",menu=HomeMenu)
+
+        Description = customtkinter.CTkTextbox(help,state="disabled",font=customtkinter.CTkFont(size=25),wrap="word",width=500,height=500)
+        Description.pack(pady=10)
+
+        btn_help = customtkinter.CTkButton(help,text_color="black",text="Description",fg_color="red",hover_color="blue",corner_radius=50,command=help_)
+        btn_help.pack(pady=10)
+
+        btn_help_del = customtkinter.CTkButton(help,text_color="black",text="Delete-Description",fg_color="red",hover_color="blue",corner_radius=50,command=help_del)
+        btn_help_del.pack(pady=10)
+
+        help.mainloop()
+
+
+    def info(self):
+        help = customtkinter.CTk()
+
+        help.geometry(f"{help.winfo_screenwidth()}x{help.winfo_screenheight()}+0+0")
+        help.title("info")
+
+        def dest():
+            help.destroy()
+
+        def help_del():
+            Description.configure(state="normal")
+            Description.delete(0.0,'end')
+            Description.configure(state="disabled")
+
+        def help_():
+            Description.configure(state="normal")
+            Description.insert(0.0,text=
+
+                """
+
+            
+Program specifications:
+
+Program name: Sort _Files++
+Program function: Sort files in a folder
+Author: mohammad Moein Hosseinzadeh
+and Amir Mohammad RajabAlian
+Author_email = moein191013895@gmail.com
+Programming language : Python
+Year of manufacture : 2024
+Number of program lines: 973
+Duration of creation: 3 months
+
+Warning : The program can be run on a 64-bit system.
+
+مشخصات برنامه:
+
+نام برنامه: Sort _Files++
+عملکرد برنامه: مرتب سازی فایل ها در یک پوشه
+نویسنده: محمد معین حسین زاده
+نویسنده_ایمیل : moein191013895@gmail.com
+زبان برنامه نویسی: پایتون
+سال ساخت: 2024
+تعداد خطوط برنامه: 973
+مدت زمان ایجاد: 3 ماه
+
+هشدار: برنامه را می توان بر روی یک سیستم 64 بیتی اجرا کرد.
+
+
+        
+
+        """
+            )
+            Description.configure(state="disabled")
+
+        MenuBar = Menu(help)
+        help.config(menu=MenuBar)
+
+        HomeMenu = Menu(MenuBar,tearoff=0,font=5,activebackground="black",activeforeground="red",fg="Blue",bg="white")
+        HomeMenu.add_command(label="Home",command=dest)
+        MenuBar.add_cascade(label="Home",menu=HomeMenu)
+
+        Description = customtkinter.CTkTextbox(help,state="disabled",font=customtkinter.CTkFont(size=25),wrap="word",width=500,height=500)
+        Description.pack(pady=10)
+
+        btn_help = customtkinter.CTkButton(help,text_color="black",text="Description",fg_color="red",hover_color="blue",corner_radius=50,command=help_)
+        btn_help.pack(pady=10)
+
+        btn_help_del = customtkinter.CTkButton(help,text_color="black",text="Delete-Description",fg_color="red",hover_color="blue",corner_radius=50,command=help_del)
+        btn_help_del.pack(pady=10)
+
+        help.mainloop()
+
 
     def them(self,ch):
         customtkinter.set_appearance_mode(ch)
 
     def delete(self):
         entry.delete(0,"end")
+
+    def prev(self):
+        input_.deiconify()
+
     def access(self):
         address = Sort_files(entry.get())
         print(address.sort_access)
@@ -787,6 +976,7 @@ Trans_late to persian language
     def json(self):
         address = Sort_files(entry.get())
         print(address.sort_json)
+
     def music(self):
         address = Sort_files(entry.get())
         print(address.sort_music)
@@ -794,9 +984,11 @@ Trans_late to persian language
     def pdf(self):
         address = Sort_files(entry.get())
         print(address.sort_pdf)
+
     def photo(self):
         address = Sort_files(entry.get())
         print(address.sort_photo)
+
     def pickle(self):
         address = Sort_files(entry.get())
         print(address.sort_pickle)
@@ -848,8 +1040,12 @@ Trans_late to persian language
         print(address.sort_txt)
         print(address.sort_zip)
         print(address.sort_xlsx)
+        
     def __init__(self):
         super().__init__()
+        
+        MenuBar = Menu(self)
+        self.config(menu=MenuBar)
         width = self.winfo_screenwidth()
         height = self.winfo_screenheight()
         self.geometry(f"{width}x{height}+0+0")
@@ -858,94 +1054,112 @@ Trans_late to persian language
         self.grid_columnconfigure(1,weight=1)
         self.grid_rowconfigure(0,weight=1)
         self.grid_rowconfigure(1,weight=7)
+        customtkinter.set_appearance_mode("light")
         frame1 = customtkinter.CTkFrame(self)
-        frame1.grid(row=0,column=0,sticky="nsew")
+        frame1.grid(row=0,column=1,sticky="nsew")
 
         frame1.grid_columnconfigure(0,weight=1)
-        global entry
-        entry = customtkinter.CTkEntry(frame1,placeholder_text="Enter your address in this PC for sort files : ",width=300,corner_radius=50,fg_color="blue",text_color="black",border_color="silver")
-        entry.grid(row=0,column=0,sticky="ew")
-        
-        btn_exit = customtkinter.CTkButton(frame1,text_color="black",corner_radius=50,fg_color="green",hover_color="yellow",text="ExitProgram",command=self.quit)
-        btn_exit.grid(row=2,column=0,sticky="nsew",padx=105,pady=50)
 
-        btn_delete = customtkinter.CTkButton(frame1,text="Delete_address",hover_color="yellow",text_color="black",fg_color="green",corner_radius=50,command=self.delete)
-        btn_delete.grid(row=1,column=0,sticky="nsew",padx=105,pady=50)
+        ExitMenu = Menu(self,tearoff=0,font=5,activebackground="black",activeforeground="red",fg="Blue",bg="white")
+        ExitMenu.add_command(label="Exit",command=self.quit)
+        MenuBar.add_cascade(label="Exit",menu=ExitMenu)
 
         frame2 = customtkinter.CTkFrame(self)
         frame2.grid(row=1,column=0,sticky="nsew")
 
-        frame2.grid_rowconfigure(0,weight=2)
-        frame2.grid_columnconfigure(0,weight=2)
-        frame2.grid_rowconfigure(1,weight=1)
-        frame2.grid_columnconfigure(1,weight=1)
-        lbl = customtkinter.CTkLabel(frame2,text="color them",font=customtkinter.CTkFont(size=25))
-        lbl.grid(row=0,column=0,sticky="nsew")
-        state = customtkinter.StringVar(value="system")
-
-        l = ["dark","light","system"]
-        combo_them = customtkinter.CTkComboBox(frame2,variable=state,values=l,command=self.them)
-        combo_them.grid(row=0,column=1,sticky="ew")
-
-
         frame3 = customtkinter.CTkFrame(self)
-        frame3.grid(row=0, column=1, sticky="nsew")
+        frame3.grid(row=0, column=0, sticky="nsew")
         frame3.grid_rowconfigure(6,weight=5)
 
+
+        global btn_sort_access
         btn_sort_access = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_access",command=self.access,text_color="black")
         btn_sort_access.grid(row=0, column=0, sticky="nsew",pady=5,padx=5)
 
+        global btn_sort_apk
         btn_sort_apk = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_android",command=self.apk,text_color="black")
         btn_sort_apk.grid(row=1, column=0, sticky="nsew",pady=5,padx=5)
 
+        global btn_sort_csv
         btn_sort_csv = customtkinter.CTkButton(frame3,fg_color="red",hover_color="blue",text="sort_csv",command=self.csv,text_color="black")
         btn_sort_csv.grid(row=2,column=0,sticky="nsew",pady=5,padx=5)
 
+
+        global btn_sort_exe
         btn_sort_exe = customtkinter.CTkButton(frame3,fg_color="red",hover_color="blue",text="sort_exe",command=self.exe,text_color="black")
         btn_sort_exe.grid(row=3,column=0,sticky="nsew",pady=5,padx=5)
 
+
+        global btn_sort_html
         btn_sort_html = customtkinter.CTkButton(frame3,fg_color="red",hover_color="blue",text="sort_html",command=self.html,text_color="black")
         btn_sort_html.grid(sticky="nsew",pady=5,padx=5,row=5,column=2)
 
+
+        global btn_sort_json
         btn_sort_json = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_json",command=self.json,text_color="black")
         btn_sort_json.grid(row=4, column=0, sticky="nsew", pady=5, padx=5)
 
+        global btn_sort_music
         btn_sort_music = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_music",command=self.music,text_color="black")
         btn_sort_music.grid(row=5, column=0, sticky="nsew", pady=5, padx=5)
 
+        global btn_sort_pdf
         btn_sort_pdf = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_pdf",command=self.pdf, text_color="black")
         btn_sort_pdf.grid(row=0, column=1, sticky="nsew", pady=5, padx=5)
 
+
+        global btn_sort_photo
         btn_sort_photo = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_photo",command=self.photo, text_color="black")
         btn_sort_photo.grid(row=1, column=1, sticky="nsew", pady=5, padx=5)
 
+
+        global btn_sort_pickle
         btn_sort_pickle = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_pickle",command=self.pickle, text_color="black")
         btn_sort_pickle.grid(row=2, column=1, sticky="nsew", pady=5, padx=5)
 
+        global btn_sort_powerpoint
         btn_sort_powerpoint = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_powerpoint",command=self.powerpoint, text_color="black")
         btn_sort_powerpoint.grid(row=3, column=1, sticky="nsew", pady=5, padx=5)
 
+
+        global btn_sort_python
         btn_sort_python = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_python",command=self.python, text_color="black")
         btn_sort_python.grid(row=4, column=1, sticky="nsew", pady=5, padx=5)
 
+
+        global btn_sort_rar
         btn_sort_rar = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_rar",command=self.rar, text_color="black")
         btn_sort_rar.grid(row=5, column=1, sticky="nsew", pady=5, padx=5)
 
+
+        global btn_sort_txt
         btn_sort_txt = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_txt",command=self.txt, text_color="black")
         btn_sort_txt.grid(row=0, column=2, sticky="nsew", pady=5, padx=5)
 
+
+        global btn_sort_video
         btn_sort_video = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_video",command=self.video, text_color="black")
         btn_sort_video.grid(row=1, column=2, sticky="nsew", pady=5, padx=5)
 
+
+        global btn_sort_word
         btn_sort_word = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_word",command=self.word, text_color="black")
         btn_sort_word.grid(row=2, column=2, sticky="nsew", pady=5, padx=5)
 
+
+        global btn_sort_excel
         btn_sort_excel = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_excel",command=self.excel, text_color="black")
         btn_sort_excel.grid(row=3, column=2, sticky="nsew", pady=5, padx=5)
 
+
+        global btn_sort_zip
         btn_sort_zip = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_zip",command=self.zip, text_color="black")
         btn_sort_zip.grid(row=4, column=2, sticky="nsew", pady=5, padx=5)
 
+        btn_Previous_page = customtkinter.CTkButton(frame3,fg_color="green",hover_color="blue",text_color="black",text="Previous page",command=self.prev)
+        btn_Previous_page.grid(row=3,column=3,sticky="nsew")
+
+        global btn_sort_all
         btn_sort_all = customtkinter.CTkButton(frame3,fg_color="red",hover_color="blue",text="sort_all",command=self.all,text_color="black")
         btn_sort_all.grid(row=6,column=0,sticky="ew",columnspan=3,padx=5,pady=5)
 
@@ -955,19 +1169,68 @@ Trans_late to persian language
         frame4.grid_rowconfigure(1,weight=2)
         frame4.grid_columnconfigure(1,weight=0)
 
+        HelpMenu = Menu(MenuBar,tearoff=0,font=5,activebackground="black",activeforeground="red",fg="Blue",bg="white")
+        HelpMenu.add_command(label="Help",command=self.help)
+        HelpMenu.add_command(label="info",command=self.info)
+        MenuBar.add_cascade(label="Help",menu = HelpMenu)
+
+        SettingMenu = Menu(self,tearoff=0,font=5,activebackground="black",activeforeground="red",fg="Blue",bg="white")
+        SettingMenu.add_command(label="Settings",command=self.setting)
+        MenuBar.add_cascade(label="Settings",menu=SettingMenu)
+
+
+class Input(customtkinter.CTk):
+
+    def delete(self):
+        entry.delete(0,'end')
+
+    def __init__(self):
+        super().__init__()
+        self.geometry(f"{self.winfo_screenwidth()}x{self.winfo_screenheight()}+0+0")
+        self.title("Input")
+        customtkinter.set_appearance_mode("light")
+
+        global entry
+        entry = customtkinter.CTkEntry(self,placeholder_text="Enter your address in this PC for sort files : ",width=500,corner_radius=50,fg_color="blue",text_color="black",border_color="silver")
+        entry.pack(pady=10)
+
+        btn_delete = customtkinter.CTkButton(self,text="Delete_address",hover_color="yellow",text_color="black",fg_color="green",corner_radius=50,command=self.delete)
+        btn_delete.pack(pady=10)
+
+        btn_nextPage = customtkinter.CTkButton(self,text="NextPage",hover_color="yellow",text_color="black",fg_color="green",corner_radius=50,command=self.next)
+        btn_nextPage.pack(pady=10)
     
+    def next(self):
+        if __name__ == "__main__":
+            window2 = Window()
+            window2.mainloop()
+        self.destroy()
 
-        btn_help = customtkinter.CTkButton(frame4,text="Help_me",fg_color="#808000",hover_color="#800000",text_color="black",command=self.help_)
-        btn_help.grid(row=0,column=0,padx=5,pady=5,sticky="ns")
+        if window2.destroy():
+            self.destroy()
 
-        btn_help_delete = customtkinter.CTkButton(frame4,text="Delete_Description",fg_color="lime",hover_color="#FBB117",text_color="black",command=self.help_delete)
-        btn_help_delete.grid(row=0,column=1,padx=5,pady=5,sticky="ns")
 
-        global text
-        text = customtkinter.CTkTextbox(frame4,wrap="word",font=customtkinter.CTkFont(size=20),state="disabled")
-        text.grid(row=1,column=0,sticky="nsew",padx=5,pady=5)
+class Welcome(customtkinter.CTk):
+    def __init__(self):
+        super().__init__()
+        self.geometry(f"{self.winfo_screenwidth()}x{self.winfo_screenheight()}+0+0")
+        self.title("Welcome")
+        customtkinter.set_appearance_mode("light")
 
+        lbl = customtkinter.CTkLabel(self,text="Welcome",font=customtkinter.CTkFont(size=25))
+        lbl.pack(pady=10)
+
+        start_app = customtkinter.CTkButton(self,text="StartApp",text_color="black",fg_color="green",hover_color="blue",corner_radius=50,command=self.get_entry)
+        start_app.pack(pady=10)
+
+    def get_entry(self):
+
+        self.destroy()
+        if __name__ == "__main__":
+            global input_
+            input_ = Input()
+            input_.mainloop()
 
 if __name__ == "__main__":
-    window = Window()
+    window = Welcome()
     window.mainloop()
