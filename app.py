@@ -889,19 +889,17 @@ Trans_late to persian language
             Description.insert(0.0,text=
 
                 """
-
-            
-Program specifications:
+                Program specifications:
 
 Program name: Sort _Files++
 Program function: Sort files in a folder
-Author: mohammad Moein Hosseinzadeh
-and Amir Mohammad RajabAlian
+Programmer: mohammad Moein Hosseinzadeh
+designer : Amir Mohammad RajabAlian
 Author_email = moein191013895@gmail.com
 Programming language : Python
 Year of manufacture : 2024
-Number of program lines: 973
-Duration of creation: 3 months
+Number of program lines: 1515
+Duration of creation: 5 months
 
 Warning : The program can be run on a 64-bit system.
 
@@ -909,15 +907,15 @@ Warning : The program can be run on a 64-bit system.
 
 نام برنامه: Sort _Files++
 عملکرد برنامه: مرتب سازی فایل ها در یک پوشه
-نویسنده: محمد معین حسین زاده
+برنامه نویس : محمد معین حسین زاده
+طراح:امیر محمد رجبعلیان
 نویسنده_ایمیل : moein191013895@gmail.com
 زبان برنامه نویسی: پایتون
 سال ساخت: 2024
-تعداد خطوط برنامه: 973
-مدت زمان ایجاد: 3 ماه
+تعداد خطوط برنامه: 1515
+مدت زمان ایجاد: 5 ماه
 
 هشدار: برنامه را می توان بر روی یک سیستم 64 بیتی اجرا کرد.
-
 
         
 
@@ -956,69 +954,124 @@ Warning : The program can be run on a 64-bit system.
     def access(self):
         address = Sort_files(entry.get())
         print(address.sort_access)
+        ok.remove("sort files ok")
+        ok.append("sort-access was ok")
+        combo.configure(values=ok)
+        
 
     def apk(self):
         address = Sort_files(entry.get())
         print(address.sort_apk)
+        ok.remove("sort files ok")
+        ok.append("sort-apk was ok")
+        combo.configure(values=ok)
 
     def csv(self):
         address = Sort_files(entry.get())
         print(address.sort_csv)
+        ok.remove("sort files ok")
+        ok.append("sort-csv was ok")
+        combo.configure(values=ok)
 
     def exe(self):
         address = Sort_files(entry.get())
         print(address.sort_exe)
+        ok.remove("sort files ok")
+        ok.append("sort-exe was ok")
+        combo.configure(values=ok)
 
     def html(self):
         address = Sort_files(entry.get())
         print(address.sort_html)
+        ok.remove("sort files ok")
+        ok.append("sort-html was ok")
+        combo.configure(values=ok)
 
     def json(self):
         address = Sort_files(entry.get())
         print(address.sort_json)
+        ok.remove("sort files ok")
+        ok.append("sort-json was ok")
+        combo.configure(values=ok)
 
     def music(self):
         address = Sort_files(entry.get())
         print(address.sort_music)
+        ok.remove("sort files ok")
+        ok.append("sort-music was ok")
+        combo.configure(values=ok)
 
     def pdf(self):
         address = Sort_files(entry.get())
         print(address.sort_pdf)
+        ok.remove("sort files ok")
+        ok.append("sort-pdf was ok")
+        combo.configure(values=ok)
 
     def photo(self):
         address = Sort_files(entry.get())
         print(address.sort_photo)
+        ok.remove("sort files ok")
+        ok.append("sort-photo was ok")
+        combo.configure(values=ok)
 
     def pickle(self):
         address = Sort_files(entry.get())
         print(address.sort_pickle)
+        ok.remove("sort files ok")
+        ok.append("sort-pickle was ok")
+        combo.configure(values=ok)
     def powerpoint(self):
         address = Sort_files(entry.get())
         print(address.sort_powerPoint)
+        ok.remove("sort files ok")
+        ok.append("sort-powerpoint was ok")
+        combo.configure(values=ok)
     def python(self):
         address = Sort_files(entry.get())
         print(address.sort_python)
+        ok.remove("sort files ok")
+        ok.append("sort-python was ok")
+        combo.configure(values=ok)
 
     def rar(self):
         address = Sort_files(entry.get())
         print(address.sort_rar)
+        ok.remove("sort files ok")
+        ok.append("sort-rar was ok")
+        combo.configure(values=ok)
     def txt(self):
         address = Sort_files(entry.get())
         print(address.sort_txt)
+        ok.remove("sort files ok")
+        ok.append("sort-txt was ok")
+        combo.configure(values=ok)
     def video(self):
         address = Sort_files(entry.get())
         print(address.sort_video)
+        ok.remove("sort files ok")
+        ok.append("sort-video was ok")
+        combo.configure(values=ok)
 
     def word(self):
         address = Sort_files(entry.get())
         print(address.sort_docx)
+        ok.remove("sort files ok")
+        ok.append("sort-word was ok")
+        combo.configure(values=ok)
     def excel(self):
         address = Sort_files(entry.get())
         print(address.sort_xlsx)
+        ok.remove("sort files ok")
+        ok.append("sort-excel was ok")
+        combo.configure(values=ok)
 
     def zip(self):
         address = Sort_files(entry.get())
         print(address.sort_zip)
+        ok.remove("sort files ok")
+        ok.append("sort-zip was ok")
+        combo.configure(values=ok)
 
     def all(self):
         address = Sort_files(entry.get())
@@ -1040,7 +1093,9 @@ Warning : The program can be run on a 64-bit system.
         print(address.sort_txt)
         print(address.sort_zip)
         print(address.sort_xlsx)
-        
+        ok.remove("sort files ok")
+        ok.append("sort-all was ok")
+        combo.configure(values=ok)
     def __init__(self):
         super().__init__()
         
@@ -1057,6 +1112,14 @@ Warning : The program can be run on a 64-bit system.
         customtkinter.set_appearance_mode("light")
         frame1 = customtkinter.CTkFrame(self)
         frame1.grid(row=0,column=1,sticky="nsew")
+        frame1.grid_columnconfigure(5,weight=5)
+        frame1.grid_rowconfigure(5,weight=5)
+
+        global ok
+        ok = ["sort files ok"]
+        global combo
+        combo = customtkinter.CTkComboBox(frame1,values=ok)
+        combo.grid(row=5,column=5,sticky="ew")
 
         frame1.grid_columnconfigure(0,weight=1)
 
@@ -1156,8 +1219,8 @@ Warning : The program can be run on a 64-bit system.
         btn_sort_zip = customtkinter.CTkButton(frame3, fg_color="red", hover_color="blue", text="sort_zip",command=self.zip, text_color="black")
         btn_sort_zip.grid(row=4, column=2, sticky="nsew", pady=5, padx=5)
 
-        btn_Previous_page = customtkinter.CTkButton(frame3,fg_color="green",hover_color="blue",text_color="black",text="Previous page",command=self.prev)
-        btn_Previous_page.grid(row=3,column=3,sticky="nsew")
+        btn_Previous_page = customtkinter.CTkButton(frame3,fg_color="green",hover_color="blue",text_color="black",text="Input Page",command=self.prev)
+        btn_Previous_page.grid(row=3,column=5,sticky="ew",padx=50)
 
         global btn_sort_all
         btn_sort_all = customtkinter.CTkButton(frame3,fg_color="red",hover_color="blue",text="sort_all",command=self.all,text_color="black")
@@ -1180,6 +1243,211 @@ Warning : The program can be run on a 64-bit system.
 
 
 class Input(customtkinter.CTk):
+        
+    def help(self):
+        help = customtkinter.CTk()
+
+        help.geometry(f"{help.winfo_screenwidth()}x{help.winfo_screenheight()}+0+0")
+        help.title("Help")
+
+        def dest():
+            help.destroy()
+
+        def help_del():
+            Description.configure(state="normal")
+            Description.delete(0.0,'end')
+            Description.configure(state="disabled")
+
+        def help_():
+            Description.configure(state="normal")
+            Description.insert(0.0,text=
+
+                """
+
+Description:
+
+To use this program, you must first enter an address in the relevant field
+
+Note: The address must belong to a folder of files, not the address of a file
+
+The exit button is for closing the program.
+
+You can delete the folder address with the delete address button and then enter a new address so that you do not need to close and reopen the program
+
+After entering the address, click the desired button to sort the files so that all the relevant files go to the folder created by the program
+
+For example, when you click the sort_exe button, all the exe files of the address go to the folder that is automatically created and the folder name is exe_files
+
+If you click a button and there is no file of that type, the program creates an empty folder for you
+
+This program is able to sort 18 different types including photos, videos, music, ...
+
+
+Note: Because the photo file has many types, 
+the program, in addition to automatically creating a folder in that folder, 
+also creates another folder. 
+This time, the name of the second automatic folder is the name of the photo type that the file follows.
+For example, if you have a photo file with the extension jpg, when the program creates the photo_files folder,
+it creates another folder called jpg_files inside it, 
+and all your photo files that have this extension go into that folder.
+Music and video files are like photo files.
+
+If you click the sort_all button, it will sort all 18 types for you
+
+Note: Suppose you used this program and, for example, sorted Python files, now you have added another Python file to your folder. When you press the sort_python button, the program will no longer create a folder, but will move all Python files back to the folder that was previously created for the first time.
+
+From the color_them section, you can choose the theme you want, which is white or black.
+
+This section also has a system option, which will be the background color of your system, which is ultimately white or black.
+
+Trans_late to persian language
+
+ترجمه به زبان فارسی
+
+
+توضیحات:
+
+برای استفاده از این برنامه ابتدا باید یک آدرس در قسمت مربوطه وارد کنید
+
+توجه: آدرس باید متعلق به پوشه ای از فایل ها باشد، نه آدرس یک فایل
+
+دکمه خروج از برنامه برای بستن برنامه است
+
+می توانید آدرس پوشه را با دکمه حذف آدرس حذف کنید و سپس یک آدرس جدید وارد کنید تا نیازی به بستن و باز کردن مجدد برنامه نباشد.
+
+پس از وارد کردن آدرس، روی دکمه مورد نظر کلیک کنید تا فایل ها مرتب شوند تا تمام فایل های مربوطه به پوشه ایجاد شده توسط برنامه بروند.
+
+به عنوان مثال، وقتی دکمه sort_exe را کلیک می کنید، تمام فایل های exe آدرس به پوشه ای می روند که به طور خودکار ایجاد می شود و نام پوشه exe_files است.
+
+اگر روی دکمه ای کلیک کنید و فایلی از آن نوع وجود نداشته باشد، برنامه یک پوشه خالی برای شما ایجاد می کند
+
+این برنامه قادر است 18 نوع مختلف از جمله عکس، فیلم، موزیک و ... را مرتب کند.
+
+
+توجه: از آنجا که فایل عکس دارای انواع مختلفی است،
+این برنامه علاوه بر ایجاد خودکار یک پوشه در آن پوشه،
+همچنین یک پوشه دیگر ایجاد می کند.
+این بار نام پوشه دوم خودکار نام نوع عکسی است که فایل دنبال می کند.
+به عنوان مثال، اگر یک فایل عکس با پسوند jpg دارید، زمانی که برنامه پوشه photo_files را ایجاد می کند،
+پوشه دیگری به نام jpg_files در داخل آن ایجاد می کند،
+و تمام فایل های عکس شما که دارای این پسوند هستند به آن پوشه می روند.
+فایل های موسیقی و ویدئو مانند فایل های عکس هستند.
+
+اگر روی دکمه sort_all کلیک کنید، همه 18 نوع را برای شما مرتب می کند
+
+نکته: فرض کنید از این برنامه استفاده کرده اید و مثلا فایل های پایتون را مرتب کرده اید، حالا یک فایل پایتون دیگر را به پوشه خود اضافه کرده اید. هنگامی که دکمه sort_python را فشار می دهید، برنامه دیگر پوشه ای ایجاد نمی کند، بلکه تمام فایل های پایتون را به پوشه ای که قبلا برای اولین بار ایجاد شده بود، برمی گرداند.
+
+از قسمت color_them می توانید تم مورد نظر خود را انتخاب کنید که سفید یا مشکی است.
+
+این قسمت یک گزینه سیستم نیز دارد که رنگ پس زمینه سیستم شما خواهد بود که در نهایت سفید یا سیاه است.
+
+
+
+
+
+            
+        
+
+        """
+            )
+            Description.configure(state="disabled")
+
+        MenuBar = Menu(help)
+        help.config(menu=MenuBar)
+
+        HomeMenu = Menu(MenuBar,tearoff=0,font=5,activebackground="black",activeforeground="red",fg="Blue",bg="white")
+        HomeMenu.add_command(label="Input",command=dest)
+        MenuBar.add_cascade(label="Input",menu=HomeMenu)
+
+        global Description
+
+        Description = customtkinter.CTkTextbox(help,state="disabled",font=customtkinter.CTkFont(size=25),wrap="word",width=500,height=500)
+        Description.pack(pady=10)
+
+        btn_help = customtkinter.CTkButton(help,text_color="black",text="Description",fg_color="red",hover_color="blue",corner_radius=50,command=help_)
+        btn_help.pack(pady=10)
+
+        btn_help_del = customtkinter.CTkButton(help,text_color="black",text="Delete-Description",fg_color="red",hover_color="blue",corner_radius=50,command=help_del)
+        btn_help_del.pack(pady=10)
+
+        help.mainloop()
+
+
+    def info(self):
+        help = customtkinter.CTk()
+
+        help.geometry(f"{help.winfo_screenwidth()}x{help.winfo_screenheight()}+0+0")
+        help.title("info")
+
+        def dest():
+            help.destroy()
+
+        def help_del():
+            Description.configure(state="normal")
+            Description.delete(0.0,'end')
+            Description.configure(state="disabled")
+
+        def help_():
+            Description.configure(state="normal")
+            Description.insert(0.0,text=
+
+                """
+
+                            
+Program specifications:
+
+Program name: Sort _Files++
+Program function: Sort files in a folder
+Programmer: mohammad Moein Hosseinzadeh
+designer : Amir Mohammad RajabAlian
+Author_email = moein191013895@gmail.com
+Programming language : Python
+Year of manufacture : 2024
+Number of program lines: 1515
+Duration of creation: 5 months
+
+Warning : The program can be run on a 64-bit system.
+
+مشخصات برنامه:
+
+نام برنامه: Sort _Files++
+عملکرد برنامه: مرتب سازی فایل ها در یک پوشه
+برنامه نویس : محمد معین حسین زاده
+طراح:امیر محمد رجبعلیان
+نویسنده_ایمیل : moein191013895@gmail.com
+زبان برنامه نویسی: پایتون
+سال ساخت: 2024
+تعداد خطوط برنامه: 1515
+مدت زمان ایجاد: 5 ماه
+
+هشدار: برنامه را می توان بر روی یک سیستم 64 بیتی اجرا کرد.
+            
+        
+
+        """
+            )
+            Description.configure(state="disabled")
+
+        MenuBar = Menu(help)
+        help.config(menu=MenuBar)
+
+        HomeMenu = Menu(MenuBar,tearoff=0,font=5,activebackground="black",activeforeground="red",fg="Blue",bg="white")
+        HomeMenu.add_command(label="Input",command=dest)
+        MenuBar.add_cascade(label="Input",menu=HomeMenu)
+
+        global Description
+
+        Description = customtkinter.CTkTextbox(help,state="disabled",font=customtkinter.CTkFont(size=25),wrap="word",width=500,height=500)
+        Description.pack(pady=10)
+
+        btn_help = customtkinter.CTkButton(help,text_color="black",text="Description",fg_color="red",hover_color="blue",corner_radius=50,command=help_)
+        btn_help.pack(pady=10)
+
+        btn_help_del = customtkinter.CTkButton(help,text_color="black",text="Delete-Description",fg_color="red",hover_color="blue",corner_radius=50,command=help_del)
+        btn_help_del.pack(pady=10)
+
+        help.mainloop()
+
 
     def delete(self):
         entry.delete(0,'end')
@@ -1190,6 +1458,17 @@ class Input(customtkinter.CTk):
         self.title("Input")
         customtkinter.set_appearance_mode("light")
 
+        MenuBar = Menu(self)
+        self.config(menu=MenuBar)
+        ExitMenu = Menu(MenuBar,tearoff=0,font=5,activebackground="black",activeforeground="red",fg="Blue",bg="white")
+        ExitMenu.add_command(label="Exit",command=self.quit)
+        MenuBar.add_cascade(label="Exit",menu=ExitMenu)
+
+        HelpMenu = Menu(MenuBar,tearoff=0,font=5,activebackground="black",activeforeground="red",fg="Blue",bg="white")
+        HelpMenu.add_command(label="Help",command=self.help)
+        HelpMenu.add_command(label="info",command=self.info)
+        MenuBar.add_cascade(label="Help",menu = HelpMenu)
+
         global entry
         entry = customtkinter.CTkEntry(self,placeholder_text="Enter your address in this PC for sort files : ",width=500,corner_radius=50,fg_color="blue",text_color="black",border_color="silver")
         entry.pack(pady=10)
@@ -1197,7 +1476,7 @@ class Input(customtkinter.CTk):
         btn_delete = customtkinter.CTkButton(self,text="Delete_address",hover_color="yellow",text_color="black",fg_color="green",corner_radius=50,command=self.delete)
         btn_delete.pack(pady=10)
 
-        btn_nextPage = customtkinter.CTkButton(self,text="NextPage",hover_color="yellow",text_color="black",fg_color="green",corner_radius=50,command=self.next)
+        btn_nextPage = customtkinter.CTkButton(self,text="Home Page",hover_color="yellow",text_color="black",fg_color="green",corner_radius=50,command=self.next)
         btn_nextPage.pack(pady=10)
     
     def next(self):
